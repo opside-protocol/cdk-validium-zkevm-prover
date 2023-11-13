@@ -21,7 +21,6 @@ void Starks::genProof(FRIProof &proof, Goldilocks::Element *publicInputs, Goldil
     CommitPols cmPols(pAddress, starkInfo.mapDeg.section[eSection::cm1_n]);
 
     Polinomial root0(HASH_SIZE, 1);
-    Polinomial root1(HASH_SIZE, 1);
     Polinomial root2(HASH_SIZE, 1);
     Polinomial root3(HASH_SIZE, 1);
 
@@ -365,7 +364,6 @@ void Starks::genProof(FRIProof &proof, Goldilocks::Element *publicInputs, Goldil
     proof.proofs.setEvals(evals.address());
 
     std::memcpy(&proof.proofs.root1[0], root0.address(), HASH_SIZE * sizeof(Goldilocks::Element));
-    std::memcpy(&proof.proofs.root2[0], root1.address(), HASH_SIZE * sizeof(Goldilocks::Element));
     std::memcpy(&proof.proofs.root3[0], root2.address(), HASH_SIZE * sizeof(Goldilocks::Element));
     std::memcpy(&proof.proofs.root4[0], root3.address(), HASH_SIZE * sizeof(Goldilocks::Element));
     TimerStopAndLog(STARK_STEP_FRI);

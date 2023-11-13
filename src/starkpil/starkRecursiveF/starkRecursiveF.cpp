@@ -156,7 +156,6 @@ void StarkRecursiveF::genProof(FRIProofC12 &proof, Goldilocks::Element publicInp
 
     RawFr::Element rootC;
     RawFr::Element root0;
-    RawFr::Element root1;
     RawFr::Element root2;
     RawFr::Element root3;
 
@@ -632,10 +631,9 @@ void StarkRecursiveF::genProof(FRIProofC12 &proof, Goldilocks::Element publicInp
     proof.proofs.setEvals(evals.address());
 
     std::memcpy(&proof.proofs.root1[0], &root0, sizeof(RawFr::Element));
-    std::memcpy(&proof.proofs.root2[0], &root1, sizeof(RawFr::Element));
     std::memcpy(&proof.proofs.root3[0], &root2, sizeof(RawFr::Element));
     std::memcpy(&proof.proofs.root4[0], &root3, sizeof(RawFr::Element));
-    for (uint i = 0; i < 5; i++)
+    for (uint i = 0; i < 4; i++)
     {
         delete treesBN128[i];
     }

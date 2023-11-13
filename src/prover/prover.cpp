@@ -4,7 +4,6 @@
 #include "prover.hpp"
 #include "utils.hpp"
 #include "scalar.hpp"
-#include "proof2zkin.hpp"
 #include "main.hpp"
 #include "main.recursive1.hpp"
 #include "main.recursive2.hpp"
