@@ -211,7 +211,7 @@ public:
             free(pConstTreeAddress);
         }
 
-        for (uint i = 0; i < 5; i++)
+        for (uint i = 0; i < 4; i++)
         {
             delete treesGL[i];
         }

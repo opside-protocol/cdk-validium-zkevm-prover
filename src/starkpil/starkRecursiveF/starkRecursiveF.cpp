@@ -165,7 +165,7 @@ void StarkRecursiveF::genProof(FRIProofC12 &proof, Goldilocks::Element publicInp
     treesBN128[2] = new MerkleTreeBN128(NExtended, starkInfo.mapSectionsN.section[eSection::cm4_2ns], cm4_2ns);
     treesBN128[3] = new MerkleTreeBN128(pConstTreeAddress);
 
-    treesBN128[4]->getRoot(&rootC);
+    treesBN128[3]->getRoot(&rootC);
 
     transcript.put(&rootC, 1);
     transcript.put(&publicInputs[0], starkInfo.nPublics);
