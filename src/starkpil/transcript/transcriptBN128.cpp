@@ -125,6 +125,7 @@ void TranscriptBN128::getPermutations(uint64_t *res, uint64_t n, uint64_t nBits)
             }
 
             curBit++;
+            
             if (curBit == 253)
             {
                 curBit = 0;
