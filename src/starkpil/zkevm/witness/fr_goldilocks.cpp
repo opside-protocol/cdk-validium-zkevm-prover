@@ -307,6 +307,7 @@ int RawFrG::toRprBE(const Element &element, uint8_t *data, int bytes)
     
     mpz_export(data, NULL, 1, 8, 1, 0, r);
   
+    mpz_clear(r);
     return FrG_N64 * 8;
 }
 
@@ -320,6 +321,8 @@ int RawFrG::fromRprBE(Element &element, const uint8_t *data, int bytes)
 
     mpz_import(r, FrG_N64 * 8, 0, 1, 0, 0, data);
     fromMpz(element, r);
+
+    mpz_clear(r);
     return FrG_N64 * 8;
 }
 
